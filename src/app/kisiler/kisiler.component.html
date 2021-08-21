@@ -1,0 +1,84 @@
+<nav class="navbar navbar-light bg-success">
+<div class="container-fluid">
+    <h2 style="color: beige;">ADRES DEFTERİ</h2>
+    <div class="d-flex">
+        <button type="button" style="color: white;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">KİŞİ EKLE</button>
+      
+    </div>
+    
+</div>
+</nav>
+<table class="table nt-3">
+    <thead>
+        <tr>
+            <th scope="col">Kişi İd</th>
+            <th scope="col">Kişi Adı &nbsp; </th>
+            <th scope="col">Kişi Soyadı &nbsp;</th>
+            <th scope="col">Kişi Email &nbsp;</th>
+            <th scope="col">Kişi Telefon &nbsp;&nbsp;</th>
+            <th scope="col">Kişi Adresi &nbsp;</th>        
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of persondata">
+         <td>{{row.id}}</td>
+         <td>{{row.firstname}}</td>
+         <td>{{row.lastname}}</td>
+         <td>{{row.email}}</td>
+         <td>{{row.telefon}}</td>
+         <td>{{row.adres}}</td>
+         <td>
+             <button (click)="onGuncelle(row)" style="color: white;" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success ">Güncelle</button>
+         </td>
+         <td>
+             <button (click)="deletePerson(row)" class="btn btn-danger mx-3" >Sil
+             </button>
+         </td>
+        </tr>
+        </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">KiŞİ BİLGİLERİ</h5>
+        
+        
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formvalues">
+  <div class="mb-3">
+    <label for="exampleInputEmail1">İSİM</label>
+    <input type="text" class="form-control" formControlName="firstname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="İSMİ GİRİN">
+  </div>
+  <div class="mb-3 form-group">
+    <label for="exampleInputPassword1">SOYAD</label>
+    <input type="text" class="form-control" formControlName="lastname" id="exampleInputPassword1" placeholder="Soyad">
+  </div>
+ <div class="mb-3 form-group">
+    <label for="exampleInputPassword1">EMAİL</label>
+    <input type="text" class="form-control" formControlName="email" id="exampleInputPassword1" placeholder="EMAİL">
+  </div>
+
+  <div class="mb-3 form-group">
+    <label for="exampleInputPassword1">TELEFON</label>
+    <input type="text" class="form-control" formControlName="telefon" id="exampleInputPassword1" placeholder="TELEFON">
+  </div>
+  
+  <div class="mb-3 form-group">
+    <label for="exampleInputPassword1">ADRES</label>
+    <input type="text" class="form-control" formControlName="adres" id="exampleInputPassword1" placeholder="ADRES">
+  </div>
+  
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button"  id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">ÇIKIŞ</button>
+        <button type="button"  (click)="postPersonDetay()"  class="btn btn-warning">KAYDET</button>
+        <button type="button"  (click)="UpdatePersonDetay()"  class="btn btn-primary">GÜNCELLE</button>
+      </div>
+    </div>
+  </div>
+</div>

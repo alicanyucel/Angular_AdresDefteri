@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "id": 19,
+      "firstname": "mell",
+      "lastname": "güneş",
+      "email": "gulerahskdjjmet@gmail.com",
+      "telefon": "87437847387",
+      "adres": "çankaya"
+    },
+    {
+      "id": 21,
+      "firstname": "ahmet",
+      "lastname": "necat",
+      "email": "ahmedinejatjjk@gmail.com",
+      "telefon": "874587485784",
+      "adres": "iran"
+    },
+    {
+      "id": 22,
+      "firstname": "hüseyin",
+      "lastname": "gökdemir",
+      "email": "huseyingokdemir@larinsoft.com",
+      "telefon": "05442223312",
+      "adres": "çankaya mustafa kemal "
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
